@@ -6,6 +6,14 @@ const server = require('../server');
 const chaiHttp = require('chai-http');
 chai.use(chaiHttp);
 
+Browser.site = 'https://boilerplate-mochachai-1.ignacio-javier1.repl.co/'
+
+const browser = new Browser();
+
+suiteSetup(function(done) {
+  return browser.visit('/', done);
+});
+
 suite('Functional Tests', function () {
   this.timeout(5000);
   suite('Integration tests with chai-http', function () {
