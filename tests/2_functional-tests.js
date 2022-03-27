@@ -6,9 +6,9 @@ const server = require('../server');
 const chaiHttp = require('chai-http');
 chai.use(chaiHttp);
 
-Browser.site = 'https://boilerplate-mochachai-1.ignacio-javier1.repl.co/'
-
 const browser = new Browser();
+
+browser.site = 'https://boilerplate-mochachai-1.ignacio-javier1.repl.co/'
 
 suiteSetup(function(done) {
   return browser.visit('/', done);
